@@ -11,6 +11,7 @@ export default {
           <li>/api/time</li>
           <li>/api/hello?name=Ana</li>
           <li>/api/quote</li>
+          <li>/api/student<li>
         </ul>
         `,
         { headers: { "content-type": "text/html" } }
@@ -46,6 +47,14 @@ export default {
       )
     }
   }
+
+    if (url.pathname === "/api/student") {
+  return Response.json({
+    name: "Marko",
+    app: "Cloudflare Worker API",
+    status: "works"
+  })
+}
 
     return new Response("Not found", { status: 404 })
   }
